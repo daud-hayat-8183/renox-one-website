@@ -4,16 +4,16 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { renoxOneVariants, renoxOneAddOns } from "@/data/renoxOne";
-import { cn, formatPrice } from "@/lib/utils";
+import { cn, formatPrice, getBasePath } from "@/lib/utils";
 import { generateWhatsAppMessage } from "@/lib/whatsapp";
 import { Check, ShoppingCart, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 
 const CAROUSEL_IMAGES = [
-  { id: 1, src: "/products/carousel/dual-device.png", label: "Rear Signature", objectPosition: "center 20%" },
-  { id: 2, src: "/products/carousel/camera-macro.png", label: "Camera Architecture", objectPosition: "center center" },
-  { id: 3, src: "/products/carousel/side-profile.png", label: "Precision Profile", objectPosition: "center center" },
+  { id: 1, src: `${getBasePath()}/products/carousel/dual-device.png`, label: "Rear Signature", objectPosition: "center 20%" },
+  { id: 2, src: `${getBasePath()}/products/carousel/camera-macro.png`, label: "Camera Architecture", objectPosition: "center center" },
+  { id: 3, src: `${getBasePath()}/products/carousel/side-profile.png`, label: "Precision Profile", objectPosition: "center center" },
 ];
 
 export default function OrderPage() {

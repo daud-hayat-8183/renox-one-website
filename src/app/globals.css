@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --renox-black: #070707;
+  --renox-charcoal: #0D0D0F;
+  --renox-surface: #141316;
+  --renox-surface-2: #1B181A;
+  --renox-copper: #FF7A32;
+  --renox-copper-bright: #FF9A5E;
+  --renox-copper-deep: #C74A14;
+  --renox-copper-glow: rgba(255, 122, 50, 0.34);
+  --renox-ivory: #F7F0EA;
+  --renox-muted: #A7A1A0;
+  --renox-line: rgba(255, 255, 255, 0.11);
+  --renox-navy: #121B35;
+  --renox-blue-reflection: #6E87C8;
+  --renox-success: #79D691;
+  --renox-danger: #FF7A7A;
+
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --color-renox-black: var(--renox-black);
+  --color-renox-charcoal: var(--renox-charcoal);
+  --color-renox-surface: var(--renox-surface);
+  --color-renox-surface-2: var(--renox-surface-2);
+  --color-renox-copper: var(--renox-copper);
+  --color-renox-copper-bright: var(--renox-copper-bright);
+  --color-renox-copper-deep: var(--renox-copper-deep);
+  --color-renox-copper-glow: var(--renox-copper-glow);
+  --color-renox-ivory: var(--renox-ivory);
+  --color-renox-muted: var(--renox-muted);
+  --color-renox-line: var(--renox-line);
+  --color-renox-navy: var(--renox-navy);
+  
+  --font-display: var(--font-sora), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+
+  --text-hero: clamp(3.2rem, 7vw, 8.5rem);
+  --text-h1: clamp(2.3rem, 4vw, 5rem);
+  --text-h2: clamp(1.75rem, 3vw, 3.3rem);
+  --text-h3: clamp(1.2rem, 1.8vw, 1.65rem);
+  --text-body: 1rem;
+  --text-small: 0.78rem;
+}
+
+body {
+  background-color: var(--renox-black);
+  color: var(--renox-ivory);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Base custom classes to match spec */
+.ease-premium {
+  transition-timing-function: var(--ease-premium);
+}

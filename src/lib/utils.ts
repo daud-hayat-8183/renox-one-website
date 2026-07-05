@@ -14,5 +14,5 @@ export function formatPrice(price: number): string {
 }
 
 export function getBasePath(): string {
-  return "/renox-one-website";
+  return "";
 }

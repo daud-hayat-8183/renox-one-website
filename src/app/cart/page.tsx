@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { renoxOneVariants, renoxOneAddOns } from "@/data/renoxOne";
 import Link from "next/link";
 import { Trash2, ShoppingBag, ArrowRight } from "lucide-react";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, getBasePath } from "@/lib/utils";
 import { generateWhatsAppMessage } from "@/lib/whatsapp";
 import gsap from "gsap";
 
@@ -145,7 +145,7 @@ export default function CartPage() {
                
                <div className="w-full md:w-40 aspect-square bg-black rounded-xl border border-white/5 flex items-center justify-center overflow-hidden flex-shrink-0 p-4 shadow-inner">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/products/carousel/dual-device.png" alt="Renox One" className="w-full h-full object-contain object-center scale-110" />
+                  <img src={`${getBasePath()}/products/carousel/dual-device.png`} alt="Renox One" className="w-full h-full object-contain object-center scale-110" />
                </div>
                
                <div className="flex flex-col flex-1 justify-center">

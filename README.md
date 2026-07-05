@@ -6,7 +6,7 @@ This project is a premium frontend product website concept for the Renox One sma
 **Note**: This is a **frontend-only** project intended for demonstration and UI/UX presentation.
 
 ## Live Demo
-Live demo: [Add deployment URL here]
+Live demo: [https://daud-hayat-8183.github.io/renox-one-website/](https://daud-hayat-8183.github.io/renox-one-website/)
 
 ## Key Features
 - **Cinematic Scroll-Scrubbed Hero Video**: High-performance video tied to scroll position via GSAP.

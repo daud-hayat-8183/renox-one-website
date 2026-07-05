@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getBasePath } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
@@ -88,13 +89,13 @@ export function ScrollVideoHero() {
         {/* Video Canvas */}
         <video
           ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover"
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
           aria-label="Renox One cinematic product film"
         >
-          <source src="/media/renox-one-hero-scroll.mp4" type="video/mp4" />
+          <source src={`${getBasePath()}/media/renox-one-hero-scroll.mp4`} type="video/mp4" />
         </video>
 
         {/* Intro Overlay */}

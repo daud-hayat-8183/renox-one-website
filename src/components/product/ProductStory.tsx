@@ -7,7 +7,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DraggableGrid } from "./DraggableGrid";
-import { cn } from "@/lib/utils";
+import { cn, getBasePath } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,7 +84,7 @@ export function ProductIntro() {
         </div>
         <div ref={imageRef} className="opacity-0 relative aspect-[3/4] w-full bg-renox-surface-2 rounded-3xl border border-renox-line overflow-hidden group">
           <img 
-            src="/a-new-object-of-intent.png" 
+            src={`${getBasePath()}/a-new-object-of-intent.png`} 
             alt="Renox One Rear View" 
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-premium"
           />
@@ -163,7 +163,7 @@ export function CameraStory() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div ref={imageRef} className="opacity-0 relative w-full bg-renox-surface-2 rounded-3xl border border-renox-line overflow-hidden group">
             <img 
-              src="/three-lenses-one-vision.png" 
+              src={`${getBasePath()}/three-lenses-one-vision.png`} 
               alt="Renox One Camera Lenses" 
               className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 ease-premium block"
             />
@@ -208,12 +208,12 @@ export function ProductGallery() {
   const [activeImage, setActiveImage] = React.useState<string | null>(null);
 
   const images = [
-    { src: "/gallery-1.png", alt: "Camera Macro", title: "CAMERA ARCHITECTURE", classes: "md:col-span-4 md:row-span-1" },
-    { src: "/gallery-5.png", alt: "Side Profile", title: "PRECISION PROFILE", classes: "md:col-span-4 md:row-span-1" },
-    { src: "/gallery-3.png", alt: "Front Hero", title: "FRONT SIGNATURE", classes: "md:col-span-4 md:row-span-2" },
-    { src: "/gallery-4.png", alt: "Large Rear Float", title: "REAR SIGNATURE", classes: "md:col-span-4 md:row-span-2" },
-    { src: "/gallery-2.png", alt: "Dual-device Final", title: "RENOX ONE DUO", classes: "md:col-span-4 md:row-span-1" },
-    { src: "/gallery-6.png", alt: "Side Angle", title: "CRAFTED IN SUNSET COPPER", classes: "md:col-span-8 md:row-span-1" },
+    { src: `${getBasePath()}/gallery-1.png`, alt: "Camera Macro", title: "CAMERA ARCHITECTURE", classes: "md:col-span-4 md:row-span-1" },
+    { src: `${getBasePath()}/gallery-5.png`, alt: "Side Profile", title: "PRECISION PROFILE", classes: "md:col-span-4 md:row-span-1" },
+    { src: `${getBasePath()}/gallery-3.png`, alt: "Front Hero", title: "FRONT SIGNATURE", classes: "md:col-span-4 md:row-span-2" },
+    { src: `${getBasePath()}/gallery-4.png`, alt: "Large Rear Float", title: "REAR SIGNATURE", classes: "md:col-span-4 md:row-span-2" },
+    { src: `${getBasePath()}/gallery-2.png`, alt: "Dual-device Final", title: "RENOX ONE DUO", classes: "md:col-span-4 md:row-span-1" },
+    { src: `${getBasePath()}/gallery-6.png`, alt: "Side Angle", title: "CRAFTED IN SUNSET COPPER", classes: "md:col-span-8 md:row-span-1" },
   ];
 
   useEffect(() => {

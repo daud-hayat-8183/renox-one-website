@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath: "/renox-one-website",
+  trailingSlash: true,
 };
 
 export default nextConfig;

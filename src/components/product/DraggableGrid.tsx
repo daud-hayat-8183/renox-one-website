@@ -8,7 +8,7 @@ import {
   DndContext,
   closestCenter,
   KeyboardSensor,
-  PointerSensor,
+  MouseSensor,
   useSensor,
   useSensors,
   DragEndEvent,
@@ -67,14 +67,15 @@ const SortableCard = ({ spec, isGrabbingGlobal }: { spec: PhysicsCardData, isGra
       {...attributes}
       {...listeners}
       className={cn(
-        "touch-none focus:outline-none"
+        "focus:outline-none"
       )}
     >
       <div
         ref={cardRef}
         onPointerMove={handlePointerMove}
         className={cn(
-          "cursor-grab active:cursor-grabbing p-8 rounded-2xl bg-renox-surface border border-renox-line/70 group relative overflow-hidden transition-[background-color,border-color,box-shadow,transform] duration-300",
+          "p-8 rounded-2xl bg-renox-surface border border-renox-line/70 group relative overflow-hidden transition-[background-color,border-color,box-shadow,transform] duration-300",
+          "md:cursor-grab md:active:cursor-grabbing",
           isDragging && "bg-renox-copper/20 border-renox-copper shadow-[0_0_40px_rgba(255,122,50,0.3)] scale-[1.05]"
         )}
       >
@@ -82,7 +83,7 @@ const SortableCard = ({ spec, isGrabbingGlobal }: { spec: PhysicsCardData, isGra
         <div 
           className={cn(
             "pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300",
-            !isGrabbingGlobal && "group-hover:opacity-100",
+            !isGrabbingGlobal && "md:group-hover:opacity-100",
             isDragging && "opacity-100"
           )}
           style={{
@@ -106,7 +107,7 @@ export function DraggableGrid({ cards }: { cards: PhysicsCardData[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const sensors = useSensors(
-    useSensor(PointerSensor, {
+    useSensor(MouseSensor, {
       activationConstraint: {
         distance: 5, // Requires a 5px drag to start, preventing accidental clicks
       },

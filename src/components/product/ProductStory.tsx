@@ -20,9 +20,20 @@ function SectionHeading({
   align?: "left" | "center" 
 }) {
   return (
-    <div className={cn("flex flex-col gap-4 mb-10 md:mb-16", align === "center" ? "text-center mx-auto items-center" : "text-center md:text-left")}>
+    <div className={cn("flex flex-col gap-4 mb-10 md:mb-16 w-full max-w-full", align === "center" ? "text-center mx-auto items-center" : "text-center md:text-left")}>
       <span className="block text-renox-copper tracking-widest text-sm md:text-base font-semibold uppercase">{eyebrow}</span>
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-renox-ivory leading-tight">{title}</h2>
+      <h2 
+        className="font-display font-bold text-renox-ivory leading-[1.02] w-full"
+        style={{ 
+          fontSize: "clamp(2.35rem, 11vw, 3.75rem)",
+          letterSpacing: "-0.04em",
+          textWrap: "balance", 
+          overflowWrap: "normal", 
+          wordBreak: "normal" 
+        }}
+      >
+        {title}
+      </h2>
       {description && <p className="text-renox-muted text-lg md:text-xl lg:text-2xl max-w-3xl font-sans leading-relaxed">{description}</p>}
     </div>
   );
@@ -370,15 +381,16 @@ export function VariantCards() {
                 "text-center md:text-left items-center md:items-start"
               )}
             >
-              <div className="w-full flex justify-center md:justify-start mb-4 relative z-20">
-                <div className="bg-renox-copper text-renox-black text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-md inline-block">
-                  Rs. 20,000 more storage & memory value
-                </div>
-              </div>
-
               <div className="card-glow absolute top-0 left-0 w-[150px] h-[150px] bg-renox-copper/20 blur-[50px] opacity-0 transition-opacity duration-350 pointer-events-none rounded-tl-[20px]"></div>
               
               <div className="relative z-10 flex flex-col h-full w-full items-center md:items-start">
+                {/* PRO BADGE IN NORMAL FLOW */}
+                <div className="mb-4">
+                  <div className="bg-renox-copper text-renox-black text-[10px] sm:text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-md inline-block">
+                    Rs. 20,000 more storage & memory value
+                  </div>
+                </div>
+
                 <span className="text-[11px] font-bold tracking-widest uppercase text-renox-copper-bright mb-2">MOST POWERFUL CONFIGURATION</span>
                 <h3 className="text-2xl md:text-3xl font-display font-semibold text-renox-ivory mb-1">Renox One Pro</h3>
                 <p className="text-renox-muted text-sm md:text-base font-mono mb-6">16GB LPDDR5X RAM · 512GB Storage</p>

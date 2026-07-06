@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { MoreVertical, X } from "lucide-react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -82,39 +82,45 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-renox-ivory p-3 -mr-3 flex items-center justify-center min-w-[44px] min-h-[44px]"
+          className="md:hidden text-renox-ivory p-3 -mr-3 flex items-center justify-center min-w-[44px] min-h-[44px] transition-transform active:scale-95"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
         >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMenuOpen ? <X size={28} /> : <MoreVertical size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 top-[72px] bg-renox-black z-40 flex flex-col px-6 py-8 border-t border-renox-line/30 h-[100svh]">
-          <nav className="flex flex-col gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-2xl font-display text-renox-ivory border-b border-renox-line/30 pb-4 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="mt-auto pb-[calc(2rem+env(safe-area-inset-bottom))] flex flex-col gap-4">
-            <Link href="/order" onClick={() => setIsMenuOpen(false)}>
-              <Button size="lg" className="w-full py-4 text-lg">Order Now</Button>
+      {/* Mobile Menu Overlay - Liquid Glass */}
+      <div 
+        className={cn(
+          "fixed right-4 md:hidden z-40 w-[240px] flex flex-col px-5 py-6 rounded-3xl border transition-all duration-200 origin-top-right",
+          "bg-[#0c0c0f]/60 backdrop-blur-[16px] backdrop-saturate-[140%] border-[rgba(255,176,104,0.18)] shadow-[0_16px_40px_rgba(0,0,0,0.5),inset_0_0_20px_rgba(255,176,104,0.05)]",
+          isMenuOpen ? "opacity-100 scale-100 translate-y-0 pointer-events-auto" : "opacity-0 scale-95 -translate-y-4 pointer-events-none"
+        )}
+        style={{
+          top: "calc(env(safe-area-inset-top) + 80px)"
+        }}
+      >
+        <nav className="flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              className="text-lg font-display text-renox-ivory border-b border-renox-line/30 pb-3 hover:text-renox-copper transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
             </Link>
-          </div>
+          ))}
+        </nav>
+        <div className="mt-6 flex flex-col gap-4">
+          <Link href="/order" onClick={() => setIsMenuOpen(false)}>
+            <Button size="default" className="w-full font-semibold">Order Now</Button>
+          </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }

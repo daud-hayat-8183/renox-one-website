@@ -46,5 +46,13 @@ Please share availability, delivery details, and payment options.
 Thank you.`;
 
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  try {
+    const newWindow = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+      // Pop-up blocked, fallback to same window
+      window.location.href = whatsappUrl;
+    }
+  } catch (e) {
+    window.location.href = whatsappUrl;
+  }
 };

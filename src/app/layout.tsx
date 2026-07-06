@@ -22,6 +22,8 @@ export const metadata: Metadata = {
   description: "Discover Renox One: premium design, flagship performance, advanced camera system, and up to 16GB RAM with 512GB storage.",
 };
 
+import { WhatsAppChat } from "@/components/layout/WhatsAppChat";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,7 +34,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <WhatsAppChat />
+      </body>
     </html>
   );
 }

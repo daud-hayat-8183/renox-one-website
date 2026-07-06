@@ -44,7 +44,7 @@ export function Header() {
       className={cn(
         "fixed z-50 transition-all duration-300 ease-premium w-[calc(100%-2rem)] md:w-[calc(100%-3rem)] max-w-[1200px] left-1/2 -translate-x-1/2",
         !isVisible ? "-translate-y-[150%] opacity-0 pointer-events-none" : "translate-y-0 opacity-100",
-        "top-4 md:top-6 bg-[#0a0a0a]/30 backdrop-blur-3xl backdrop-saturate-[200%] backdrop-contrast-[110%] backdrop-brightness-[115%] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] rounded-full h-16 md:h-[72px]"
+        "top-[calc(1rem+env(safe-area-inset-top))] md:top-[calc(1.5rem+env(safe-area-inset-top))] bg-[#0a0a0a]/30 backdrop-blur-3xl backdrop-saturate-[200%] backdrop-contrast-[110%] backdrop-brightness-[115%] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)] rounded-full h-16 md:h-[72px]"
       )}
     >
       {/* Liquid Glass Noise & Distortion Overlay */}
@@ -84,32 +84,33 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-renox-ivory p-2 -mr-2"
+          className="md:hidden text-renox-ivory p-3 -mr-3 flex items-center justify-center min-w-[44px] min-h-[44px]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 top-[64px] bg-renox-black z-40 flex flex-col px-6 py-8 border-t border-renox-line">
+        <div className="fixed inset-0 top-[72px] bg-renox-black z-40 flex flex-col px-6 py-8 border-t border-renox-line/30 h-[100svh]">
           <nav className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-2xl font-display text-renox-ivory border-b border-renox-line pb-4"
+                className="text-2xl font-display text-renox-ivory border-b border-renox-line/30 pb-4 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <div className="mt-auto pb-12 flex flex-col gap-4">
+          <div className="mt-auto pb-[calc(2rem+env(safe-area-inset-bottom))] flex flex-col gap-4">
             <Link href="/order" onClick={() => setIsMenuOpen(false)}>
-              <Button size="lg" className="w-full">Order Now</Button>
+              <Button size="lg" className="w-full py-4 text-lg">Order Now</Button>
             </Link>
           </div>
         </div>

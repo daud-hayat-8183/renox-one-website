@@ -460,7 +460,7 @@ export function VariantCards() {
           <p ref={descRef} className="text-renox-muted text-lg md:text-xl lg:text-2xl font-sans leading-relaxed opacity-0">Choose the official Renox One configuration that fits the way you create, store, and move.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-7 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-7 mt-12 max-w-full">
           {/* Card 1 */}
           <div 
             ref={card1Ref}

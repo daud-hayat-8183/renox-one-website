@@ -1,6 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ScrollVideoHero } from "@/components/hero/ScrollVideoHero";
+import { ResponsiveHero } from "@/components/hero/ResponsiveHero";
 import { ProductIntro, SpecificationGrid, CameraStory, ProductGallery, VariantCards, FinalCTA } from "@/components/product/ProductStory";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <ScrollVideoHero />
+        <ResponsiveHero />
         <ProductIntro />
         <SpecificationGrid />
         <CameraStory />

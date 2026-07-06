@@ -8,7 +8,7 @@ export function WhatsAppChat() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] flex flex-col items-end gap-3 group">
+    <div className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-6 md:bottom-8 md:right-8 z-[100] flex flex-col items-end gap-3 group">
       {/* Tooltip text */}
       <div className="opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-premium bg-renox-surface/80 backdrop-blur-md border border-white/10 shadow-lg rounded-full px-4 py-2 text-renox-ivory text-sm font-sans font-medium whitespace-nowrap shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
         Contact Us

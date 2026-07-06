@@ -9,7 +9,7 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function ScrollVideoHero() {
+export default function DesktopVideoHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const textIntroRef = useRef<HTMLDivElement>(null);

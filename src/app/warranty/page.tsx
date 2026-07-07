@@ -127,36 +127,35 @@ export default function WarrantyPage() {
           z-index: 10;
         }
       `}</style>
-      <main ref={containerRef} className="min-h-screen bg-renox-black text-renox-ivory font-sans pt-40 pb-32 overflow-hidden">
+      <main ref={containerRef} className="w-full max-w-[100vw] min-h-screen bg-renox-black text-renox-ivory font-sans pt-40 pb-32 overflow-x-hidden box-border">
         
-        {/* Background ambient glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150vw] max-w-[800px] h-[400px] bg-renox-copper/5 blur-[120px] pointer-events-none rounded-full"></div>
+        {/* Background ambient glow - fixed width to be safe on mobile */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[400px] bg-renox-copper/5 blur-[120px] pointer-events-none rounded-full"></div>
 
         {/* Hero Section */}
-        <div ref={heroRef} className="max-w-[1000px] mx-auto px-6 md:px-12 text-center mb-20 opacity-0 relative z-10">
+        <div ref={heroRef} className="w-[min(100%-32px,1000px)] mx-auto text-center mb-20 opacity-0 relative z-10 box-border">
           <span className="block text-renox-copper tracking-widest text-sm font-semibold uppercase mb-4">RENOXCARE</span>
           <h1 
             className="text-4xl md:text-6xl font-display font-bold text-renox-ivory mb-6 leading-tight w-full"
             style={{ 
-              fontSize: "clamp(2rem, 10vw, 4.5rem)",
+              fontSize: "clamp(2rem, 8vw, 4.5rem)",
               textWrap: "balance", 
-              overflowWrap: "normal", 
-              wordBreak: "normal" 
+              wordBreak: "break-word"
             }}
           >
             Uncompromising Protection.
           </h1>
-          <p className="text-lg md:text-xl text-renox-muted max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-renox-muted max-w-2xl mx-auto leading-relaxed">
             Every Renox One is engineered for perfection, and backed by a warranty designed to keep you creating without limits.
           </p>
         </div>
 
         {/* Core Benefits Grid */}
-        <div className="max-w-[1200px] mx-auto px-6 md:px-20 grid grid-cols-1 md:grid-cols-3 gap-6 mb-32 relative z-10">
+        <div className="w-[min(100%-32px,1200px)] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-32 relative z-10 box-border">
           
           <div 
             ref={el => { cardsRef.current[0] = el; }} 
-            className="warranty-card opacity-0 bg-renox-charcoal border border-renox-line rounded-3xl p-8 relative overflow-hidden"
+            className="warranty-card opacity-0 bg-renox-charcoal border border-renox-line rounded-3xl p-6 sm:p-8 relative overflow-hidden w-full box-border"
             style={{ animation: 'float-medium 9s ease-in-out infinite' }}
             onMouseMove={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
@@ -182,7 +181,7 @@ export default function WarrantyPage() {
 
           <div 
             ref={el => { cardsRef.current[1] = el; }} 
-            className="warranty-card opacity-0 bg-renox-charcoal border border-renox-line rounded-3xl p-8 relative overflow-hidden"
+            className="warranty-card opacity-0 bg-renox-charcoal border border-renox-line rounded-3xl p-6 sm:p-8 relative overflow-hidden w-full box-border"
             style={{ animation: 'float-intense 11s ease-in-out infinite' }}
             onMouseMove={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
@@ -209,7 +208,7 @@ export default function WarrantyPage() {
 
           <div 
             ref={el => { cardsRef.current[2] = el; }} 
-            className="warranty-card opacity-0 bg-renox-charcoal border border-renox-line rounded-3xl p-8 relative overflow-hidden"
+            className="warranty-card opacity-0 bg-renox-charcoal border border-renox-line rounded-3xl p-6 sm:p-8 relative overflow-hidden w-full box-border"
             style={{ animation: 'float-soft 8s ease-in-out infinite' }}
             onMouseMove={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
@@ -236,28 +235,28 @@ export default function WarrantyPage() {
         </div>
 
         {/* Detailed Coverage */}
-        <div ref={contentRef} className="max-w-[900px] mx-auto px-6 md:px-20 relative z-10">
+        <div ref={contentRef} className="w-[min(100%-32px,900px)] mx-auto relative z-10 box-border">
           <div className="opacity-0 mb-16">
-            <h2 className="text-3xl font-display font-bold text-renox-ivory mb-6 border-b border-renox-line pb-4">What Is Covered</h2>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-renox-ivory mb-6 border-b border-renox-line pb-4">What Is Covered</h2>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors">
-                <div className="mt-1 text-renox-copper"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors w-full box-border">
+                <div className="mt-1 text-renox-copper flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
                 <div>
-                  <h4 className="font-semibold text-lg text-renox-ivory mb-1">Hardware Defects</h4>
+                  <h4 className="font-semibold text-base sm:text-lg text-renox-ivory mb-1">Hardware Defects</h4>
                   <p className="text-renox-muted text-sm leading-relaxed">Any faults in materials, manufacturing, or workmanship under normal use.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors">
-                <div className="mt-1 text-renox-copper"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors w-full box-border">
+                <div className="mt-1 text-renox-copper flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
                 <div>
-                  <h4 className="font-semibold text-lg text-renox-ivory mb-1">Battery Health</h4>
+                  <h4 className="font-semibold text-base sm:text-lg text-renox-ivory mb-1">Battery Health</h4>
                   <p className="text-renox-muted text-sm leading-relaxed">Free battery replacement if the maximum charging capacity drops below 80% within the 2-year period.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors">
-                <div className="mt-1 text-renox-copper"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors w-full box-border">
+                <div className="mt-1 text-renox-copper flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
                 <div>
-                  <h4 className="font-semibold text-lg text-renox-ivory mb-1">Included Accessories</h4>
+                  <h4 className="font-semibold text-base sm:text-lg text-renox-ivory mb-1">Included Accessories</h4>
                   <p className="text-renox-muted text-sm leading-relaxed">The original charging cable and power adapter are covered against defects for 1 year.</p>
                 </div>
               </div>
@@ -265,26 +264,26 @@ export default function WarrantyPage() {
           </div>
 
           <div className="opacity-0 mb-20">
-            <h2 className="text-3xl font-display font-bold text-renox-ivory mb-6 border-b border-renox-line pb-4">What Is Not Covered</h2>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-renox-ivory mb-6 border-b border-renox-line pb-4">What Is Not Covered</h2>
             <div className="space-y-4">
-              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors">
-                <div className="mt-1 text-renox-muted"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors w-full box-border">
+                <div className="mt-1 text-renox-muted flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
                 <div>
-                  <h4 className="font-semibold text-lg text-renox-ivory mb-1">Liquid Damage</h4>
+                  <h4 className="font-semibold text-base sm:text-lg text-renox-ivory mb-1">Liquid Damage</h4>
                   <p className="text-renox-muted text-sm leading-relaxed">While the Renox One is highly water-resistant, warranty coverage does not extend to failure caused by submersion or severe liquid damage.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors">
-                <div className="mt-1 text-renox-muted"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors w-full box-border">
+                <div className="mt-1 text-renox-muted flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
                 <div>
-                  <h4 className="font-semibold text-lg text-renox-ivory mb-1">Unauthorized Modifications</h4>
+                  <h4 className="font-semibold text-base sm:text-lg text-renox-ivory mb-1">Unauthorized Modifications</h4>
                   <p className="text-renox-muted text-sm leading-relaxed">Damage caused by repairs, physical modifications, or third-party software installed by unauthorized service providers.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors">
-                <div className="mt-1 text-renox-muted"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+              <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-renox-surface/30 transition-colors w-full box-border">
+                <div className="mt-1 text-renox-muted flex-shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
                 <div>
-                  <h4 className="font-semibold text-lg text-renox-ivory mb-1">Cosmetic Wear</h4>
+                  <h4 className="font-semibold text-base sm:text-lg text-renox-ivory mb-1">Cosmetic Wear</h4>
                   <p className="text-renox-muted text-sm leading-relaxed">Normal depletion of consumable parts such as protective coatings, or superficial scratches and dents that do not affect device functionality.</p>
                 </div>
               </div>
@@ -293,16 +292,16 @@ export default function WarrantyPage() {
         </div>
 
         {/* Call to Action */}
-        <div ref={ctaRef} className="max-w-[1000px] mx-auto px-6 md:px-20 opacity-0 relative z-10">
-          <div className="bg-gradient-to-br from-[#121212] to-[#0a0a0a] border border-renox-copper/20 rounded-[32px] p-10 md:p-16 text-center relative overflow-hidden group">
+        <div ref={ctaRef} className="w-[min(100%-32px,1000px)] mx-auto opacity-0 relative z-10 box-border">
+          <div className="bg-gradient-to-br from-[#121212] to-[#0a0a0a] border border-renox-copper/20 rounded-[32px] p-8 sm:p-10 md:p-16 text-center relative overflow-hidden group w-full box-border">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-renox-copper/5 blur-[100px] pointer-events-none group-hover:bg-renox-copper/10 transition-colors duration-700"></div>
             
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-renox-ivory mb-4 relative z-10">Need to make a claim?</h2>
-            <p className="text-renox-muted text-lg mb-8 max-w-xl mx-auto relative z-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-renox-ivory mb-4 relative z-10" style={{ textWrap: "balance" }}>Need to make a claim?</h2>
+            <p className="text-renox-muted text-base sm:text-lg mb-8 max-w-xl mx-auto relative z-10">
               Our VIP concierge team is ready to assist you. Contact us immediately to arrange a priority repair or replacement.
             </p>
             <div className="relative z-10">
-              <Link href="/support" className="inline-flex items-center justify-center bg-renox-copper text-renox-black font-semibold tracking-wider uppercase text-sm px-8 py-4 rounded-full hover:brightness-110 hover:scale-105 transition-all duration-300">
+              <Link href="/support" className="inline-flex items-center justify-center bg-renox-copper text-renox-black font-semibold tracking-wider uppercase text-sm px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:brightness-110 hover:scale-105 transition-all duration-300 w-full sm:w-auto">
                 Contact Concierge
               </Link>
             </div>

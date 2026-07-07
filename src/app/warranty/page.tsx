@@ -130,13 +130,23 @@ export default function WarrantyPage() {
       <main ref={containerRef} className="min-h-screen bg-renox-black text-renox-ivory font-sans pt-40 pb-32 overflow-hidden">
         
         {/* Background ambient glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-renox-copper/5 blur-[120px] pointer-events-none rounded-full"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150vw] max-w-[800px] h-[400px] bg-renox-copper/5 blur-[120px] pointer-events-none rounded-full"></div>
 
         {/* Hero Section */}
-        <div ref={heroRef} className="max-w-[1000px] mx-auto px-6 md:px-20 text-center mb-24 opacity-0 relative z-10">
-          <span className="block text-renox-copper tracking-widest text-sm md:text-base font-semibold uppercase mb-4">RENOXCARE</span>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-renox-ivory mb-6 leading-tight">Uncompromising Protection.</h1>
-          <p className="text-xl md:text-2xl text-renox-muted max-w-2xl mx-auto leading-relaxed">
+        <div ref={heroRef} className="max-w-[1000px] mx-auto px-6 md:px-12 text-center mb-20 opacity-0 relative z-10">
+          <span className="block text-renox-copper tracking-widest text-sm font-semibold uppercase mb-4">RENOXCARE</span>
+          <h1 
+            className="text-4xl md:text-6xl font-display font-bold text-renox-ivory mb-6 leading-tight w-full"
+            style={{ 
+              fontSize: "clamp(2rem, 10vw, 4.5rem)",
+              textWrap: "balance", 
+              overflowWrap: "normal", 
+              wordBreak: "normal" 
+            }}
+          >
+            Uncompromising Protection.
+          </h1>
+          <p className="text-lg md:text-xl text-renox-muted max-w-2xl mx-auto leading-relaxed">
             Every Renox One is engineered for perfection, and backed by a warranty designed to keep you creating without limits.
           </p>
         </div>

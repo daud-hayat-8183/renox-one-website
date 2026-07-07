@@ -127,7 +127,7 @@ export default function WarrantyPage() {
           z-index: 10;
         }
       `}</style>
-      <main ref={containerRef} className="w-full max-w-[100vw] min-h-screen bg-renox-black text-renox-ivory font-sans pt-40 pb-32 overflow-x-hidden box-border">
+      <main ref={containerRef} className="min-h-screen bg-renox-black text-renox-ivory font-sans pt-40 pb-32 overflow-hidden">
         
         {/* Background ambient glow - fixed width to be safe on mobile */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[400px] bg-renox-copper/5 blur-[120px] pointer-events-none rounded-full"></div>

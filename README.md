@@ -89,8 +89,8 @@ All product imagery and hero media are stored locally within the `public/` direc
 - **Never commit `.env` files, API keys, tokens, or private credentials.** 
 
 ## Deployment
-Uploading this repository to GitHub publishes the source code but does not automatically deploy a live website. Given the Next.js foundation, deploying to a service like [Vercel](https://vercel.com/) is recommended for out-of-the-box support for the Next.js App Router and edge caching. 
-
+This project is deployed through Vercel. GitHub Pages deployment is intentionally disabled.
+Given the Next.js foundation, deploying to [Vercel](https://vercel.com/) ensures out-of-the-box support for the Next.js App Router and edge caching.
 ## Disclaimer
 Renox One pricing, availability, hardware specifications, warranty terms, and product claims are concept/demo content unless commercially verified. The technical specifications and visual renders do not imply a certified or released consumer product.
 
